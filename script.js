@@ -4,8 +4,7 @@ let toDoItem = function(toDoEvent) {
     counter++;
     return `
         <div class="toDoItem" id="item${counter}">
-                <span id="toDoText${counter}">${toDoEvent}</span>
-                <button class="edit-btn" id="edit${counter}">✏️</button>
+                <span class="toDoText" id="text${counter}">${toDoEvent}</span>
                 <button class="delete-btn" id="delete${counter}">🗑️</button>
             </div>
     `;
@@ -28,14 +27,14 @@ addButton.addEventListener('click',
         }
     }
 );
-
-document.querySelector(".toDoList").addEventListener("click", (event) => {
-    const e = event.target;
-
-    if (event.target.classList.contains("delete-btn")) {
-        console.log("Delete button clicked!");
-    }
-    if (event.target.classList.contains("edit-btn")) {
-        console.log("edit button clicked!");
-    }
-});
+    
+    document.querySelector(".toDoList").addEventListener("click",
+        (e) => {
+            let targetInfo = e.target;
+            if (targetInfo.getAttribute("class") === "delete-btn") {
+                const toBeDeletedItem = targetInfo.parentNode.getAttribute("id");
+                const item = document.getElementById(toBeDeletedItem);
+                item.remove();
+            }
+        }
+    );
