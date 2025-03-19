@@ -1,74 +1,147 @@
-*{
-    padding: 0px;
-    margin: 0px;
-    border-radius: 0%;
-    border: 0px;
-}
-
-.mainPage{
+* {
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    border: none;
+    outline: none;
+  }
+  
+  .mainPage {
     height: 100vh;
     width: 100vw;
-    background: #00033b;
-    justify-items: center;
-    align-content: center;
-
-}
-
-.textInfo{
-    color: azure;
-    font-family: sans-serif ;
-}
-
-.toDoInputDiv{
-    height:40px;
-    width: 300px;
-    justify-items: center;
-    display: flex;
-    border-radius: 3px;
-    overflow: hidden;
-}
-
-.toDoInput{
-    height: 100%;
-    width: 90%;
-    padding-left: 12px;
-    color: gray;
-}
-
-.addButton{
-    height: 100%;
-    width:10%;
-    justify-items: center;
-    align-content: center;
     background: white;
-}
-
-#addButtonText{
-    font-family: sans-serif;
-    font-size: x-large;
-    color: gray;
-}
-
-.checkButton{
-    height: 35px;
-    width: auto;
-    padding: 8px;
-    border-radius: 2px;
-    background: rgb(255, 255, 255);
-}
-
-#checkButtonText{
-    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .notebook {
+    background: white;
+    height: 70%;
+    width: 30%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.086);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .textInfo {
+    margin-top: 12px;
+    color: rgb(38, 30, 91);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  
+  .toDoInputDiv {
+    margin-top: 24px;
+    height: 9%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+  }
+  
+  .toDoInput {
+    width: 75%;
+    border-radius: 15px;
+    padding-left: 12px;
+    background: whitesmoke;
+  }
+  
+  .addButton {
+    width: 20%;
+    border-radius: 15px;
+    background: #ff0000;
+    cursor: pointer;
+  }
+  
+  .addButton:active {
+    background: #e50000;
+  }
+  
+  #addButtonText {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: small;
-    color:gray; 
-}
-
-.toDoItem{
-    height: 40px;
-    width: 300px;
-    border-radius: 3px;
+    color: white;
+  }
+  
+  .toDoList {
+    margin-top: 28px;
+    height: 80%;
+    width: 90%;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .toDoList::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .toDoItem {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    width: 100%;
+  }
+  
+  .delete-btn {
+    position: absolute;
+    right: 22px;
+    background-color: transparent;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .toDoText {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: gray;
+    margin-left: 1rem;
+  }
+  
+  .taskCheck {
+    height: 17px;
+    width: 17px;
+    appearance: none;
+    border: 1px solid gray;
+    border-radius: 50%;
+    cursor: pointer;
     background-color: white;
-    justify-items: center;
-    align-content: center;
-}
-
+  }
+  
+  .taskCheck:checked {
+    background-color: green;
+    border-color: green;
+  }
+  
+  .taskCheck:checked::before {
+    content: "\2713";
+    font-size: 12px;
+    color: white;
+    font-weight: bold;
+  }
+  
+  @media (max-width: 600px) {
+    .mainPage {
+      display: none;
+    }
+  
+    .notebook {
+      width: 90%; 
+      height: 80%;
+    }
+  }
+  
+  @media (min-width: 601px) and (max-width: 1024px) {
+    .notebook {
+      width: 60%;
+      height: 75%;
+    }
+  }
+  
+  @media (min-width: 1025px) {
+    .notebook {
+      width: 30%;
+    }
+  }
+  
