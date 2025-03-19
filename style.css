@@ -1,21 +1,22 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box; /* Added for better box model handling */
     border-radius: 0;
     border: none;
     outline: none;
-  }
-  
-  .mainPage {
+}
+
+.mainPage {
     height: 100vh;
     width: 100vw;
     background: white;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .notebook {
+}
+
+.notebook {
     background: white;
     height: 70%;
     width: 30%;
@@ -24,82 +25,87 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  
-  .textInfo {
+    padding: 20px; /* Added padding for better spacing */
+}
+
+.textInfo {
     margin-top: 12px;
     color: rgb(38, 30, 91);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  }
-  
-  .toDoInputDiv {
+    font-size: 1.2em; /* Added for better readability */
+}
+
+.toDoInputDiv {
     margin-top: 24px;
     height: 9%;
     width: 90%;
     display: flex;
     justify-content: space-between;
     border-radius: 10px;
-  }
-  
-  .toDoInput {
+    gap: 10px; /* Added gap between input and button */
+}
+
+.toDoInput {
     width: 75%;
     border-radius: 15px;
     padding-left: 12px;
     background: whitesmoke;
-  }
-  
-  .addButton {
+    border: 1px solid #ccc; /* Added border for better visibility */
+}
+
+.addButton {
     width: 20%;
     border-radius: 15px;
     background: #ff0000;
     cursor: pointer;
-  }
-  
-  .addButton:active {
-    background: #e50000;
-  }
-  
-  #addButtonText {
+    color: white; /* Added color for better visibility */
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: small;
-    color: white;
-  }
-  
-  .toDoList {
+    border: none; /* Ensure no border */
+}
+
+.addButton:active {
+    background: #e50000;
+}
+
+.toDoList {
     margin-top: 28px;
     height: 80%;
     width: 90%;
     overflow-y: auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
-  }
-  
-  .toDoList::-webkit-scrollbar {
+}
+
+.toDoList::-webkit-scrollbar {
     display: none;
-  }
-  
-  .toDoItem {
+}
+
+.toDoItem {
     display: flex;
     align-items: center;
     padding: 12px;
     width: 100%;
-  }
-  
-  .delete-btn {
-    position: absolute;
-    right: 22px;
+    border-bottom: 1px solid #eee; /* Added border for separation */
+}
+
+.delete-btn {
+    margin-left: auto; /* Moved delete button to the right */
     background-color: transparent;
     font-size: 16px;
     cursor: pointer;
-  }
-  
-  .toDoText {
+    border: none; /* Ensure no border */
+    color: red; /* Added color for better visibility */
+}
+
+.toDoText {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: gray;
     margin-left: 1rem;
-  }
-  
-  .taskCheck {
+    flex-grow: 1; /* Allow text to take up available space */
+}
+
+.taskCheck {
     height: 17px;
     width: 17px;
     appearance: none;
@@ -107,41 +113,44 @@
     border-radius: 50%;
     cursor: pointer;
     background-color: white;
-  }
-  
-  .taskCheck:checked {
+    flex-shrink: 0; /* Prevent checkbox from shrinking */
+}
+
+.taskCheck:checked {
     background-color: green;
     border-color: green;
-  }
-  
-  .taskCheck:checked::before {
+}
+
+.taskCheck:checked::before {
     content: "\2713";
     font-size: 12px;
     color: white;
     font-weight: bold;
-  }
-  
-  @media (max-width: 600px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 600px) {
     .mainPage {
-      display: none;
+        display: flex; /* Changed to flex to ensure it displays */
     }
-  
+
     .notebook {
-      width: 90%; 
-      height: 80%;
+        width: 90%; 
+        height: 80%;
     }
-  }
-  
-  @media (min-width: 601px) and (max-width: 1024px) {
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
     .notebook {
-      width: 60%;
-      height: 75%;
+        width: 60%;
+        height: 75%;
     }
-  }
-  
-  @media (min-width: 1025px) {
+}
+
+@media (min-width: 1025px) {
     .notebook {
-      width: 30%;
+        width: 30%;
     }
-  }
-  
+}
